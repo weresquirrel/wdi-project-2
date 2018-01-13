@@ -5,6 +5,7 @@ const routes         = require('./config/routes');
 const mongoose       = require('mongoose');
 mongoose.Promise     = require('bluebird');
 const { port, env, dbURI } = require('./config/environment');
+console.log(`dbURI: ${dbURI}`);
 
 const app = express();
 
