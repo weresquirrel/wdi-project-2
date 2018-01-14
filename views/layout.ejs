@@ -2,11 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>WDI Project 2</title>
+    <title>DIY Share</title>
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
   <body>
-    <%- body %>
+    <header>
+      <a href="#">
+        <h1>DIY Share</h1>
+        <p>a place for your projects</p>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <%- body %>
+    </main>
   </body>
 </html>
