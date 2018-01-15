@@ -13,10 +13,8 @@ function sessionsCreate(req, res, next) {
       if(!user || !user.validatePassword(req.body.password)) {
         return res.status(401).render('sessions/new', { message: 'Unrecognised user' });
       }
-
       req.session.userId = user.id;
       req.user = user;
-
       req.flash('success', `Welcome back, ${user.username}!`);
       res.redirect('/index');
       req.flash('success', `Welcome back, ${user.username}!`);
