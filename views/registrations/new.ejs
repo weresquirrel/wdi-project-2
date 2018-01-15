@@ -1,4 +1,11 @@
 <h2>register</h2>
+
+<% if(locals.message) { %>
+  <div role="alert">
+    <%= message %>
+  </div>
+<% } %>
+
 <form method="POST" action="/register">
   <div>
     <label for="username">Username</label>
