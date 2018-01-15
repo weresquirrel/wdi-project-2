@@ -3,7 +3,7 @@ const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 
 router
-  .get('/', (req, res) => res.render('statics/index'));
+  .get('/', (req, res) => res.redirect('/index'));
 
 router
   .get('/index', (req, res) => res.render('statics/index'));
@@ -17,6 +17,7 @@ router.route('/login')
   .get(sessions.new)
   .post(sessions.create);
 
-
+router.route('/logout')
+  .get(sessions.delete);
 
 module.exports = router;

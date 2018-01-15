@@ -16,14 +16,23 @@ function sessionsCreate(req, res, next) {
       req.session.userId = user.id;
       req.user = user;
       req.flash('success', `Welcome back, ${user.username}!`);
+
       res.redirect('/index');
+
+      //it works!
+      console.log(user.username);
+
       req.flash('success', `Welcome back, ${user.username}!`);
     })
     .catch(next);
 }
 
+function deleteRoute(req, res) {
+  return req.session.regenerate(() => res.redirect('/'));
+}
 
 module.exports = {
   new: sessionsNew,
-  create: sessionsCreate
+  create: sessionsCreate,
+  delete: deleteRoute
 };
