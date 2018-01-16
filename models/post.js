@@ -12,7 +12,7 @@ const shortPostSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   pictures: [{}],
-  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User'}
 });
 
 

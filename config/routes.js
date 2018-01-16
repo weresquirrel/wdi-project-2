@@ -7,9 +7,13 @@ const secureRoute = require('../lib/secureRoute');
 router
   .get('/', (req, res) => res.redirect('/index'));
 
-router
-  .get('/index', (req, res) => res.render('statics/index'))
-  .post(secureRoute, shortPosts.create);
+// router
+//   .get('/index', (req, res) => res.render('statics/index'));
+
+router.route('/index')
+  .get(shortPosts.index);
+
+
 
 router.route('/register')
   .get(registrations.new)
