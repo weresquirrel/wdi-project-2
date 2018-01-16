@@ -1,4 +1,4 @@
-const Post = require('../models/post');
+const ShortPost = require('../models/post');
 
 function shortPostsNew(req, res) {
   res.render('posts/shorts/new');
@@ -6,17 +6,17 @@ function shortPostsNew(req, res) {
 
 
 function shortPostsIndex(req, res, next) {
-  Post
+  ShortPost
     .find()
     .exec()
-    .then((posts) => res.render('statics/index', { posts }))
+    .then((shortPosts) => res.render('statics/index', { shortPosts }))
     .catch(next);
 }
 
 function shortPostsCreate(req, res, next) {
   req.body.pictures = JSON.parse(req.body.pictures);
   req.body.createdBy = req.user;
-  Post
+  ShortPost
     .create(req.body)
     .then(() => res.redirect('/index'));
 }
