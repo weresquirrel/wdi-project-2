@@ -1,0 +1,10 @@
+<h3>All short posts</h3>
+
+<ul>
+  <% shortPosts.forEach((shortPost) => { %>
+    <li>
+      <h4><%= shortPost.title %></h4>
+      <p>Description: <%= shortPost.description %></p>
+    </li>
+  <% }); %>
+</ul>

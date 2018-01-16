@@ -1,26 +1,42 @@
-<form  action="/posts/short" method="POST">
+<form action="/posts/short" method="POST">
   <div>
     <label for="title">Project Title</label>
     <input type="text" name="title" id="title" required>
   </div>
-
-  <form action="" method="post">
-    <div>
-      <label for="picture">Picture url</label>
-      <input type="text" name="picture" id="picture" required>
-    </div>
-    <div>
-      <label for="caption">Caption</label>
-      <input type="text" name="caption" id="caption" required>
-    </div>
-
-    <button class="button">Add</button>
-  </form>
 
   <div>
     <label for="description">Description</label>
     <input type="textarea" name="description" id="description" required>
   </div>
 
+  <div class="add-pictures">
+    <p>Add pictures to project</p>
+    <div>
+      <label for="picture">Picture url</label>
+      <input type="text" name="picture" id="picture">
+    </div>
+    <div>
+      <label for="caption">Caption</label>
+      <input type="text" name="caption" id="caption">
+    </div>
+
+    <button class="add-picture-button" type="button" name="button">Save Picture</button>
+  </div>
+
+  <input type="hidden" name="pictures" value="" id="pictures">
+
+  <hr>
+
   <button class="button">Create</button>
 </form>
+
+<%# <form action="" method="post">
+  <div>
+    <label for="picture">Picture url</label>
+    <input type="text" name="picture" id="picture" required>
+  </div>
+  <div>
+    <label for="caption">Caption</label>
+    <input type="text" name="caption" id="caption" required>
+  </div>
+</form> %>

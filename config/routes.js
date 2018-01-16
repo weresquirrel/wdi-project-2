@@ -8,7 +8,8 @@ router
   .get('/', (req, res) => res.redirect('/index'));
 
 router
-  .get('/index', (req, res) => res.render('statics/index'));
+  .get('/index', (req, res) => res.render('statics/index'))
+  .post(secureRoute, shortPosts.create);
 
 router.route('/register')
   .get(registrations.new)
@@ -24,6 +25,8 @@ router.route('/logout')
 
 router.route('/posts/short/new')
   .get(secureRoute, shortPosts.new);
-// .post();
+
+router.route('/posts/short')
+  .post(secureRoute, shortPosts.create);
 
 module.exports = router;

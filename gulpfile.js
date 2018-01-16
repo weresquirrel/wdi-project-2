@@ -52,10 +52,12 @@ gulp.task('assets', () => {
 
 gulp.task('serve', sequence('clean', ['es6', 'sass']), () => {
   browserSync.init({
+    
     proxy: 'http://localhost:3000',
     port: 8000,
     files: ['public/**/*.*', 'views/**/*.*'],
     reloadDelay: 500
+
   });
 
   return nodemon().on('start', () => browserSync.reload());
