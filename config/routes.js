@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
+const shortPosts = require('../controllers/shortPosts');
+const secureRoute = require('../lib/secureRoute');
 
 router
   .get('/', (req, res) => res.redirect('/index'));
@@ -19,5 +21,9 @@ router.route('/login')
 
 router.route('/logout')
   .get(sessions.delete);
+
+router.route('/posts/short/new')
+  .get(secureRoute, shortPosts.new);
+// .post();
 
 module.exports = router;
