@@ -1,4 +1,11 @@
 <h2>Login</h2>
+
+<% if(locals.message) { %>
+  <div role="alert">
+    <%= message %>
+  </div>
+<% } %>
+
 <form method="POST" action="/login">
   <div>
     <label for="email">Email</label>
