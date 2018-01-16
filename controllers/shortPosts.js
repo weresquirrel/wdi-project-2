@@ -20,7 +20,8 @@ function shortPostsCreate(req, res, next) {
   req.body.createdBy = req.user;
   ShortPost
     .create(req.body)
-    .then(() => res.redirect('/index'));
+    .then(() => res.redirect('/index'))
+    .catch(next);
 }
 
 function shortPostsShow(req, res, next) {
@@ -34,12 +35,24 @@ function shortPostsShow(req, res, next) {
     .catch(next);
 }
 
-// /posts/short/:id
+function shortPostsDelete(req, res, next) {
+  ShortPost
+    .findById(req.params.id)
+    .exec()
+    .then((shortPost) => {
+
+      return shortPost.remove();
+    })
+    .then(() => res.redirect('/'))
+    .catch(next);
+}
+
+// /posts/shorts/:id
 
 module.exports = {
   new: shortPostsNew,
   create: shortPostsCreate,
   index: shortPostsIndex,
-  show: shortPostsShow
-  // delete:
+  show: shortPostsShow,
+  delete: shortPostsDelete
 };

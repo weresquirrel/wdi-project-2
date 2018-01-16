@@ -15,7 +15,6 @@ const shortPostSchema = new mongoose.Schema({
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User'}
 });
 
-
 shortPostSchema.methods.belongsTo = function belongsTo(user) {
   return this.createdBy.id === user.id;
 };

@@ -34,8 +34,8 @@ router.route('/posts/short/new')
   .get(secureRoute, shortPosts.new);
 
 router.route('/posts/shorts/:id')
-  .get(shortPosts.show);
+  .get(shortPosts.show)
 // .put(secureRoute, shortPosts.update)
-// .delete(secureRoute, shortPosts.delete);
+  .delete(secureRoute, shortPosts.delete);
 
 module.exports = router;

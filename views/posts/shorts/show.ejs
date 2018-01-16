@@ -13,3 +13,13 @@
 <% }); %>
 
 <p><%= shortPost.description %></p>
+
+<% if (locals.isLoggedIn && shortPost.belongsTo(user)) { %>
+  <p>secret content</p>
+
+  <form method="POST" action="/posts/shorts/<%= shortPost.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <button>Delete</button>
+  </form>
+
+<% } %>
