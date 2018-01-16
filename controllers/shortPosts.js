@@ -4,12 +4,14 @@ function shortPostsNew(req, res) {
   res.render('posts/shorts/new');
 }
 
-
 function shortPostsIndex(req, res, next) {
   ShortPost
     .find()
     .exec()
-    .then((shortPosts) => res.render('statics/index', { shortPosts }))
+    .then((shortPosts) => {
+      res.render('statics/index', { shortPosts });
+
+    })
     .catch(next);
 }
 
@@ -21,12 +23,22 @@ function shortPostsCreate(req, res, next) {
     .then(() => res.redirect('/index'));
 }
 
+function shortPostsShow(req, res, next) {
+  ShortPost
+    .findById(req.params.id)
+    .exec()
+    .then((shortPost) => {
+      return res.render('posts/shorts/show', { shortPost });
+    })
+    .catch(next);
+}
 
-
+// /posts/short/:id
 
 module.exports = {
   new: shortPostsNew,
   create: shortPostsCreate,
-  index: shortPostsIndex
+  index: shortPostsIndex,
+  show: shortPostsShow
   // delete:
 };

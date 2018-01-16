@@ -13,10 +13,12 @@ User.collection.drop();
 Post
   .create([{
     title: 'Repaint Finished!',
-    description: 'Lorem ipsum dolor sit amet'
+    description: 'Lorem ipsum dolor sit amet',
+    pictures: [{url: 'https://images.unsplash.com/photo-1485277092938-6d17c5c88920?auto=format&fit=crop&w=1051&q=80', caption: 'My yellow chair'}]
   },{
     title: 'Door decor',
-    description: 'Adipisicing elit'
+    description: 'Adipisicing elit',
+    pictures: [{url: 'https://images.unsplash.com/photo-1512728657599-58bfaaa75696?auto=format&fit=crop&w=634&q=80', caption: 'door'}]
   }])
   .then((posts) => console.log(`${posts.length} posts created`))
   .catch((err) => console.log(err))

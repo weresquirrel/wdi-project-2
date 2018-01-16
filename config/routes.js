@@ -27,10 +27,15 @@ router.route('/login')
 router.route('/logout')
   .get(sessions.delete);
 
+router.route('/posts/short')
+  .post(secureRoute, shortPosts.create);
+
 router.route('/posts/short/new')
   .get(secureRoute, shortPosts.new);
 
-router.route('/posts/short')
-  .post(secureRoute, shortPosts.create);
+router.route('/posts/shorts/:id')
+  .get(shortPosts.show);
+// .put(secureRoute, shortPosts.update)
+// .delete(secureRoute, shortPosts.delete);
 
 module.exports = router;

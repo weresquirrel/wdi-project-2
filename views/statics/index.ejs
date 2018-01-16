@@ -5,8 +5,16 @@
 <ul>
   <% shortPosts.forEach((shortPost) => { %>
     <li>
-      <h4><%= shortPost.title %></h4>
-      <p>Description: <%= shortPost.description %></p>
+      <a href="/posts/shorts/<%= shortPost.id %>">
+        <h4><%= shortPost.title %></h4>
+      </a>
+      <div>
+        <img src="<%= shortPost.pictures[0].url %>" alt="<%=shortPost.pictures[0].caption %>">
+        <p><%=shortPost.pictures[0].caption %></p>
+      </div>
+
+      <% console.log(shortPost.pictures[0].caption); %>
+      <p><%= shortPost.description %></p>
     </li>
   <% }); %>
 </ul>
