@@ -26,6 +26,7 @@ function shortPostsCreate(req, res, next) {
 function shortPostsShow(req, res, next) {
   ShortPost
     .findById(req.params.id)
+    .populate('createdBy')
     .exec()
     .then((shortPost) => {
       return res.render('posts/shorts/show', { shortPost });
