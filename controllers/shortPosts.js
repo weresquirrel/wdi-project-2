@@ -47,6 +47,17 @@ function shortPostsDelete(req, res, next) {
     .catch(next);
 }
 
+function shortPostsEdit(req, res, next) {
+  ShortPost
+    .findById(req.params.id)
+    .exec()
+    .then((shortPost) => {
+
+      return res.render('posts/shorts/edit', { shortPost });
+    })
+    .catch(next);
+}
+
 // /posts/shorts/:id
 
 module.exports = {
@@ -54,5 +65,6 @@ module.exports = {
   create: shortPostsCreate,
   index: shortPostsIndex,
   show: shortPostsShow,
-  delete: shortPostsDelete
+  delete: shortPostsDelete,
+  edit: shortPostsEdit
 };

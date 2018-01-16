@@ -1,7 +1,7 @@
 const express              = require('express');
 const morgan               = require('morgan');
 const expressLayouts       = require('express-ejs-layouts');
-const methodOverride = require('method-override');
+const methodOverride       = require('method-override');
 const routes               = require('./config/routes');
 const mongoose             = require('mongoose');
 mongoose.Promise           = require('bluebird');

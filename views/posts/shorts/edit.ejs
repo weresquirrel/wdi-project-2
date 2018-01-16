@@ -1,0 +1,16 @@
+<form action="/posts/short" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <div>
+    <label for="title">Project Title</label>
+    <input type="text" name="title" id="title" value="<%= shortPost.title %>" required>
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <input type="textarea" name="description" id="description" value="<%= shortPost.description %>" required>
+  </div>
+
+  <hr>
+
+  <button class="button">Update</button>
+</form>

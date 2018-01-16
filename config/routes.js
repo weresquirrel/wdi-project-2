@@ -38,4 +38,7 @@ router.route('/posts/shorts/:id')
 // .put(secureRoute, shortPosts.update)
   .delete(secureRoute, shortPosts.delete);
 
+router.route('/posts/shorts/:id/edit')
+  .get(secureRoute, shortPosts.edit);
+
 module.exports = router;
