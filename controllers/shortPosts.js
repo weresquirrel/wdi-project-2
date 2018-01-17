@@ -58,6 +58,22 @@ function shortPostsEdit(req, res, next) {
     .catch(next);
 }
 
+function shortPostsUpdate(req, res, next) {
+  console.log('up to update');
+  ShortPost
+    .findById(req.params.id)
+    .exec()
+    .then((shortPost) => {
+      shortPost = Object.assign(shortPost, req.body);
+      return shortPost.save();
+
+    })
+    .then(() => res.redirect(`../shorts/${req.params.id}`))
+    .catch(next);
+}
+
+
+
 // /posts/shorts/:id
 
 module.exports = {
@@ -66,5 +82,6 @@ module.exports = {
   index: shortPostsIndex,
   show: shortPostsShow,
   delete: shortPostsDelete,
-  edit: shortPostsEdit
+  edit: shortPostsEdit,
+  update: shortPostsUpdate
 };

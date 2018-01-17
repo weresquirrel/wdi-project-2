@@ -35,10 +35,11 @@ router.route('/posts/short/new')
 
 router.route('/posts/shorts/:id')
   .get(shortPosts.show)
-// .put(secureRoute, shortPosts.update)
+  .put(secureRoute, shortPosts.update)
   .delete(secureRoute, shortPosts.delete);
 
 router.route('/posts/shorts/:id/edit')
   .get(secureRoute, shortPosts.edit);
+  // .put(secureRoute, shortPosts.update);
 
 module.exports = router;
