@@ -1,5 +1,4 @@
-<form action="/posts/shorts/<%= shortPost.id %>" method="POST">
-
+<form class="edit-project" action="/posts/shorts/<%= shortPost.id %>" method="POST">
   <input type="hidden" name="_method" value="PUT">
   <div>
     <label for="title">Project Title</label>
@@ -11,11 +10,18 @@
     <input type="textarea" name="description" id="description" value="<%= shortPost.description %>" required>
   </div>
 
-  
-
-
-  <div class="add-pictures">
-    <p>Add new pictures to your project</p>
+  <div class="pictures-form">
+    <h3>Pictures</h3>
+    <ul class="pictures-container">
+      <% shortPost.pictures.forEach((picture, i) => { %>
+        <li id="<%= i %>">
+          <img src="<%= picture.url %>" width="100" height="100">
+          <p><%= picture.caption %></p>
+          <p class="btn btn-danger deletePicture" id="<%= i %>">x</p>
+        </li>
+      <% }); %>
+    </ul>
+    <hr>
     <div>
       <label for="picture">Picture url</label>
       <input type="text" name="picture" id="picture">
@@ -25,12 +31,14 @@
       <input type="text" name="caption" id="caption">
     </div>
 
-    <button class="add-picture-button" type="button" name="button">
+    <p class="add-picture-button btn btn-primary" type="button" name="button">
       Save Picture
-    </button>
+    </p>
   </div>
-  <input type="hidden" name="pictures" value="" id="pictures">
-  <hr>
+
+  <textarea id="allPictures" name="pictures" style="display:none;">
+    <%- JSON.stringify(shortPost.pictures) %>
+  </textarea>
 
   <button class="button">Update</button>
 </form>

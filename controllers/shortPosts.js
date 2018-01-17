@@ -61,23 +61,21 @@ function shortPostsEdit(req, res, next) {
 }
 
 function shortPostsUpdate(req, res, next) {
-  console.log('up to update');
+  if (req.body.pictures) {
+    req.body.pictures = JSON.parse(req.body.pictures);
+  }
+
   ShortPost
     .findById(req.params.id)
     .exec()
     .then((shortPost) => {
 
-      if(req.body.pictures.length !== 0 ) {
-        req.body.pictures = JSON.parse(req.body.pictures);
-      }
-
       shortPost = Object.assign(shortPost, req.body);
-
 
       return shortPost.save();
 
     })
-    .then(() => res.redirect(`../shorts/${req.params.id}`))
+    .then(() => res.redirect(`/posts/shorts/${req.params.id}`))
     .catch(next);
 }
 

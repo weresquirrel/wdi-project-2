@@ -2,12 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>DIY Share</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
   <body>
@@ -17,25 +23,36 @@
         <p>a place for your projects</p>
       </a>
       <nav>
-        <ul>
+        <ul class="nav justify-content-end">
           <% if(locals.isLoggedIn) { %>
-            <li><a href="/logout">Logout</a></li>
-            <li><a href="/posts/short/new">+ Add Project</a></li>
+            <li class="nav-item">
+              <a href="/posts/short/new" class="nav-link">+ Add Project</a>
+            </li>
+            <li class="nav-item">
+              <a href="/logout" class="nav-link">Logout</a>
+            </li>
+            
           <% } else { %>
-            <li><a href="/register">Register</a></li>
-            <li><a href="/login">Login</a></li>
+            <li class="nav-item">
+              <a href="/register" class="nav-link">Register</a>
+            </li>
+            <li class="nav-item">
+              <a href="/login" class="nav-link">Login</a>
+            </li>
           <% } %>
         </ul>
       </nav>
     </header>
-    <main>
-      <% for(const type in messages) { %>
-        <div class="callout <%= type %>">
-          <h5><%= messages[type] %></h5>
-        </div>
-      <% } %>
+    <main class="container">
+      <div>
+        <% for(const type in messages) { %>
+          <div class="callout <%= type %>">
+            <h5><%= messages[type] %></h5>
+          </div>
+          <% } %>
 
-      <%- body %>
+          <%- body %>
+      </div>
     </main>
   </body>
 </html>
