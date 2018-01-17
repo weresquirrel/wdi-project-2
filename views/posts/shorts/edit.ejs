@@ -11,6 +11,25 @@
     <input type="textarea" name="description" id="description" value="<%= shortPost.description %>" required>
   </div>
 
+  
+
+
+  <div class="add-pictures">
+    <p>Add new pictures to your project</p>
+    <div>
+      <label for="picture">Picture url</label>
+      <input type="text" name="picture" id="picture">
+    </div>
+    <div>
+      <label for="caption">Caption</label>
+      <input type="text" name="caption" id="caption">
+    </div>
+
+    <button class="add-picture-button" type="button" name="button">
+      Save Picture
+    </button>
+  </div>
+  <input type="hidden" name="pictures" value="" id="pictures">
   <hr>
 
   <button class="button">Update</button>

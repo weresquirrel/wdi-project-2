@@ -15,7 +15,6 @@
 <p><%= shortPost.description %></p>
 
 <% if (locals.isLoggedIn && shortPost.belongsTo(user)) { %>
-  <p>secret content</p>
   <a href="/posts/shorts/<%= shortPost.id %>/edit">Edit</a>
   <form method="POST" action="/posts/shorts/<%= shortPost.id %>">
     <input type="hidden" name="_method" value="DELETE">

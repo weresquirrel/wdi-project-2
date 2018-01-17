@@ -16,7 +16,9 @@ function shortPostsIndex(req, res, next) {
 }
 
 function shortPostsCreate(req, res, next) {
-  req.body.pictures = JSON.parse(req.body.pictures);
+  if(req.body.pictures.length !== 0 ) {
+    req.body.pictures = JSON.parse(req.body.pictures);
+  }
   req.body.createdBy = req.user;
   ShortPost
     .create(req.body)
@@ -64,7 +66,14 @@ function shortPostsUpdate(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((shortPost) => {
+
+      if(req.body.pictures.length !== 0 ) {
+        req.body.pictures = JSON.parse(req.body.pictures);
+      }
+
       shortPost = Object.assign(shortPost, req.body);
+
+
       return shortPost.save();
 
     })
