@@ -20,5 +20,29 @@
     <input type="hidden" name="_method" value="DELETE">
     <button>Delete</button>
   </form>
+<% } %>
 
+
+<% shortPost.comments.forEach((comment) => { %>
+  <p><%= comment.content %></p>
+  <small><%= comment.createdBy.username %></small>
+
+  <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
+
+    <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments/<%= comment.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Delete comment</button>
+    </form>
+  <% } %>
+<% }) %>
+
+
+<% if(locals.isLoggedIn) { %>
+  <section>
+    <h4>Leave a comment</h4>
+    <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments">
+      <textarea name="content" id="content" placeholder="Comment" required></textarea>
+      <button>Send</button>
+    </form>
+  </section>
 <% } %>

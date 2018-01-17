@@ -29,7 +29,7 @@ function shortPostsCreate(req, res, next) {
 function shortPostsShow(req, res, next) {
   ShortPost
     .findById(req.params.id)
-    .populate('createdBy')
+    .populate('createdBy comments.createdBy')
     .exec()
     .then((shortPost) => {
       return res.render('posts/shorts/show', { shortPost });
@@ -79,9 +79,35 @@ function shortPostsUpdate(req, res, next) {
     .catch(next);
 }
 
-
-
 // /posts/shorts/:id
+function createComment(req, res, next) {
+  req.body.createdBy = req.user;
+
+  ShortPost
+    .findById(req.params.id)
+    .exec()
+    .then((shortPost) => {
+      shortPost.comments.push(req.body);
+      return shortPost.save();
+    })
+    .then(() => res.redirect(`/posts/shorts/${req.params.id}`))
+    .catch(next);
+}
+
+function deleteComment(req, res, next) {
+  ShortPost
+    .findById(req.params.id)
+    .exec()
+    .then((shortPost) => {
+      const comment = shortPost.comments.id(req.params.commentId);
+      comment.remove();
+      return shortPost.save();
+    })
+    .then(() => res.redirect(`/posts/shorts/${req.params.id}`))
+    .catch(next);
+}
+
+
 
 module.exports = {
   new: shortPostsNew,
@@ -90,5 +116,7 @@ module.exports = {
   show: shortPostsShow,
   delete: shortPostsDelete,
   edit: shortPostsEdit,
-  update: shortPostsUpdate
+  update: shortPostsUpdate,
+  createComment: createComment,
+  deleteComment: deleteComment
 };

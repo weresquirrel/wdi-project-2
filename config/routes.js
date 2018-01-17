@@ -7,20 +7,14 @@ const secureRoute = require('../lib/secureRoute');
 router
   .get('/', (req, res) => res.redirect('/index'));
 
-// router
-//   .get('/index', (req, res) => res.render('statics/index'));
-
 router.route('/index')
   .get(shortPosts.index);
-
-
 
 router.route('/register')
   .get(registrations.new)
   .post(registrations.create);
 
 router.route('/login')
-  // .get((req, res) => res.render('sessions/new'));
   .get(sessions.new)
   .post(sessions.create);
 
@@ -40,6 +34,12 @@ router.route('/posts/shorts/:id')
 
 router.route('/posts/shorts/:id/edit')
   .get(secureRoute, shortPosts.edit);
-  // .put(secureRoute, shortPosts.update);
+
+router.route('/posts/shorts/:id/comments')
+  .post(shortPosts.createComment);
+
+router.route('/posts/shorts/:id/comments/:commentId')
+  .delete(shortPosts.deleteComment);
+
 
 module.exports = router;

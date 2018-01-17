@@ -8,11 +8,23 @@ const mongoose = require('mongoose');
 //   caption: { type: String  }
 // });
 
+const commentSchema = new mongoose.Schema({
+  content: { type: String, required: true },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+}, {
+  timestamps: true
+});
+
+commentSchema.methods.belongsTo = function commentBelongsTo(user) {
+  return this.createdBy.id === user.id;
+};
+
 const shortPostSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   pictures: [{}],
-  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User'}
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User'},
+  comments: [ commentSchema ]
 });
 
 shortPostSchema.methods.belongsTo = function belongsTo(user) {
