@@ -8,3 +8,29 @@ body {
   color: red;
   font-family: 'Arial';
 }
+
+.index {
+  list-style-type: none;
+}
+
+.index li {
+  margin-bottom: 15px;
+
+}
+
+.card {
+  // border: 2px solid red;
+  padding: 2px;
+}
+
+.comments-num {
+  text-align: right;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}

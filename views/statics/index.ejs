@@ -2,19 +2,29 @@
 
 <h3>All short posts</h3>
 
-<ul class="row">
+<ul class="row index">
   <% shortPosts.forEach((shortPost) => { %>
-    <li>
-      <a href="/posts/shorts/<%= shortPost.id %>">
-        <h4><%= shortPost.title %></h4>
-      </a>
-      <div>
-        <img src="<%= shortPost.pictures[0].url %>" alt="<%=shortPost.pictures[0].caption %>">
-        <p><%=shortPost.pictures[0].caption %></p>
-      </div>
+    <li class="col-lg-4 col-md-6">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="<%= shortPost.pictures[0].url %>" alt="<%=shortPost.pictures[0].caption %>">
+        <div class="card-body">
+          <a href="/posts/shorts/<%= shortPost.id %>">
+            <div class="left">
+              <h5 class="card-title"><%= shortPost.title %></h5>
 
-      <% console.log(shortPost.pictures[0].caption); %>
-      <p><%= shortPost.description %></p>
+              <% if (shortPost.createdBy) { %>
+                <p>created by: <%= shortPost.createdBy.username %></p>
+              <% } %>
+            </div>
+            <div class="right">
+              <h5 class="comments-num"><%= shortPost.comments.length %></h5>
+              <small class="comments-num">comments</small>
+            </div>
+
+
+          </a>
+        </div>
+      </div>
     </li>
   <% }); %>
 </ul>

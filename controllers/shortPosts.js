@@ -7,6 +7,7 @@ function shortPostsNew(req, res) {
 function shortPostsIndex(req, res, next) {
   ShortPost
     .find()
+    .populate('createdBy')
     .exec()
     .then((shortPosts) => {
       res.render('statics/index', { shortPosts });
