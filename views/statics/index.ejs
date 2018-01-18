@@ -7,17 +7,17 @@
         <img class="card-img-top" src="<%= shortPost.pictures[0].url %>" alt="<%=shortPost.pictures[0].caption %>">
         <div class="card-body">
 
+
+            <a href="/posts/shorts/<%= shortPost.id %>">
+              <h5 class="card-title"><%= shortPost.title %></h5>
+            </a>
             <div class="left">
-              <a href="/posts/shorts/<%= shortPost.id %>">
-                <h5 class="card-title"><%= shortPost.title %></h5>
-              </a>
               <% if (shortPost.createdBy) { %>
-                <p>created by: <%= shortPost.createdBy.username %></p>
+                <small>by: <%= shortPost.createdBy.username %></small>
               <% } %>
             </div>
             <div class="right">
-              <h5 class="comments-num"><%= shortPost.comments.length %></h5>
-              <small class="comments-num">comments</small>
+              <small class="comments-num"><%= shortPost.comments.length %> comments</small>
             </div>
 
 
