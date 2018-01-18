@@ -164,3 +164,13 @@ nav {
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .25rem;
 }
+
+div.card-img-top {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85;
+  &:hover {
+    opacity: 1;
+  }
+}

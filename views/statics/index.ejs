@@ -4,7 +4,7 @@
   <% shortPosts.forEach((shortPost) => { %>
     <li class="col-lg-4 col-md-6">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="<%= shortPost.pictures[0].url %>" alt="<%=shortPost.pictures[0].caption %>">
+        <div class="card-img-top" alt="<%=shortPost.pictures[0].caption %>" style="background-image: url('<%= shortPost.pictures[0].url %>')"></div>
         <div class="card-body">
             <a href="/posts/shorts/<%= shortPost.id %>">
               <h5 class="card-title"><%= shortPost.title %></h5>
