@@ -1,47 +1,49 @@
-<h3><%= shortPost.title %></h3>
-<p>created by: <%= shortPost.createdBy.username %></p>
+<div class="row show">
+  <div  style="background: yellow;">
 
-<% shortPost.pictures.forEach((picture) => { %>
+    <h3><%= shortPost.title %></h3>
+    <p>created by: <%= shortPost.createdBy.username %></p>
 
-  <div>
-    <img src="<%= picture.url %>" alt="<%= picture.caption %>">
-    <p><%= picture.caption %></p>
+    <% shortPost.pictures.forEach((picture) => { %>
+      <div>
+        <img class="img-fluid" src="<%= picture.url %>" alt="<%= picture.caption %>">
+        <p><%= picture.caption %></p>
+      </div>
+    <% }); %>
+
+    <p><%= shortPost.description %></p>
+
+    <% if (locals.isLoggedIn && shortPost.belongsTo(user)) { %>
+      <a href="/posts/shorts/<%= shortPost.id %>/edit">Edit</a>
+      <form method="POST" action="/posts/shorts/<%= shortPost.id %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Delete</button>
+      </form>
+    <% } %>
+
+    <hr>
+
+    <% shortPost.comments.forEach((comment) => { %>
+      <p><%= comment.content %></p>
+      <small><%= comment.createdBy.username %></small>
+
+      <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
+        <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments/<%= comment.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <button>Delete comment</button>
+        </form>
+      <% } %>
+    <% }) %>
+
+    <% if(locals.isLoggedIn) { %>
+      <section>
+        <h4>Leave a comment</h4>
+        <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments">
+          <textarea name="content" id="content" placeholder="Comment" required></textarea>
+          <button>Send</button>
+        </form>
+      </section>
+    <% } %>
+
   </div>
-
-<% }); %>
-
-<p><%= shortPost.description %></p>
-
-<% if (locals.isLoggedIn && shortPost.belongsTo(user)) { %>
-  <a href="/posts/shorts/<%= shortPost.id %>/edit">Edit</a>
-  <form method="POST" action="/posts/shorts/<%= shortPost.id %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <button>Delete</button>
-  </form>
-<% } %>
-
-<hr>
-
-<% shortPost.comments.forEach((comment) => { %>
-  <p><%= comment.content %></p>
-  <small><%= comment.createdBy.username %></small>
-
-  <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
-
-    <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments/<%= comment.id %>">
-      <input type="hidden" name="_method" value="DELETE">
-      <button>Delete comment</button>
-    </form>
-  <% } %>
-<% }) %>
-
-
-<% if(locals.isLoggedIn) { %>
-  <section>
-    <h4>Leave a comment</h4>
-    <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments">
-      <textarea name="content" id="content" placeholder="Comment" required></textarea>
-      <button>Send</button>
-    </form>
-  </section>
-<% } %>
+</div>
