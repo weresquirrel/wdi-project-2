@@ -1,24 +1,36 @@
-<div class="row show">
-  <div  style="background: yellow;">
+<div class="container show">
+
+<div class="row">
+  <div class="show-post">
 
     <h3><%= shortPost.title %></h3>
     <p>created by: <%= shortPost.createdBy.username %></p>
 
     <% shortPost.pictures.forEach((picture) => { %>
-      <div>
+      <div class="picture-wrapper">
         <img class="img-fluid" src="<%= picture.url %>" alt="<%= picture.caption %>">
-        <p><%= picture.caption %></p>
+        <p class="caption"><%= picture.caption %></p>
       </div>
     <% }); %>
 
     <p><%= shortPost.description %></p>
 
     <% if (locals.isLoggedIn && shortPost.belongsTo(user)) { %>
-      <a href="/posts/shorts/<%= shortPost.id %>/edit">Edit</a>
-      <form method="POST" action="/posts/shorts/<%= shortPost.id %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <button>Delete</button>
-      </form>
+      <div class="post-manager">
+
+        <p>Manage your post</p>
+        <ul>
+          <li>
+            <a href="/posts/shorts/<%= shortPost.id %>/edit" class="btn btn-outline-secondary">Edit</a>
+          </li>
+          <li>
+            <form method="POST" action="/posts/shorts/<%= shortPost.id %>">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="btn btn-outline-secondary">Delete</button>
+            </form>
+          </li>
+        </ul>
+      </div>
     <% } %>
 
     <hr>
@@ -30,7 +42,7 @@
       <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
         <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments/<%= comment.id %>">
           <input type="hidden" name="_method" value="DELETE">
-          <button>Delete comment</button>
+          <button class="btn btn-outline-secondary">Delete comment</button>
         </form>
       <% } %>
     <% }) %>
@@ -40,10 +52,12 @@
         <h4>Leave a comment</h4>
         <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments">
           <textarea name="content" id="content" placeholder="Comment" required></textarea>
-          <button>Send</button>
+          <button class="btn btn-outline-secondary">Send</button>
         </form>
       </section>
     <% } %>
 
   </div>
+</div>
+
 </div>

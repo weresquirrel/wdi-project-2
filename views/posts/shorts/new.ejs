@@ -1,34 +1,40 @@
+<div class="form new-short-post">
+
+
+
 <form action="/posts/short" method="POST">
-  <div>
+  <div class="form-group">
     <label for="title">Project Title</label>
-    <input type="text" name="title" id="title" required>
+    <input class="form-control" type="text" name="title" id="title" required>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="description">Description</label>
-    <input type="textarea" name="description" id="description" required>
+    <input class="form-control" type="textarea" name="description" id="description" required>
   </div>
 
   <div class="pictures-form">
-    <h3>Pictures</h3>
+    <h5>Pictures</h5>
     <ul class="pictures-container">
     </ul>
     <hr>
-    <div>
+    <div class="form-group">
       <label for="picture">Picture url</label>
-      <input type="text" name="picture" id="picture">
+      <input class="form-control" type="text" name="picture" id="picture">
     </div>
-    <div>
+    <div class="form-group">
       <label for="caption">Caption</label>
-      <input type="text" name="caption" id="caption">
+      <input class="form-control" type="text" name="caption" id="caption">
     </div>
 
-    <p class="add-picture-button btn btn-primary" type="button" name="button">
+    <p class="add-picture-button btn btn-outline-secondary" type="button" name="button">
       Save Picture
     </p>
   </div>
 
   <textarea id="allPictures" name="pictures" style="display:none;"></textarea>
 
-  <button class="button">Create</button>
+  <button class="button btn btn-outline-secondary">Create</button>
 </form>
+
+</div>

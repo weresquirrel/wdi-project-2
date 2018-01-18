@@ -22,18 +22,16 @@ a:hover {
 
 .h1-container {
   text-align: center;
-  color: #847E93;
+  color: $color-dreamy;
 }
 
 .h1-container:hover {
-  color: #847E93;
+  color: $color-dreamy;
 }
 
 .h1-container p {
   margin-top: -7px;
 }
-
-
 
 
 h1 {
@@ -43,12 +41,13 @@ h1 {
 }
 
 nav {
-  border-bottom: 1px solid silver;
+  // border-bottom: 1px solid silver;
+  border-top: 1px solid silver;
   margin-bottom: 15px;
 }
 
 .nav-link {
-  color: #847E93;
+  color: $color-dreamy;
   font-family: $font-plain;
 }
 
@@ -62,6 +61,7 @@ nav {
 
 .index {
   list-style-type: none;
+  padding-left: 0;
 }
 
 .index li {
@@ -80,7 +80,7 @@ nav {
 }
 
 .index h5:hover {
-  color:#847E93;
+  color:$color-dreamy;
 }
 
 .card {
@@ -98,4 +98,69 @@ nav {
 
 .right {
   float: right;
+}
+
+
+
+.show {
+  max-width: 790px;
+}
+
+.show h3 {
+  font-family: $font-decoration;
+}
+
+.show .caption {
+  font-family: $font-decoration;
+}
+
+.show-post {
+  padding: 20px 30px 20px 30px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.picture-wrapper {
+  text-align: center;
+}
+
+.picture-wrapper img {
+  border-radius: .25rem;
+}
+
+.show .post-manager {
+  border-top: 1px solid rgba(0,0,0,.125);
+}
+
+.show .post-manager p{
+  font-family: $font-decoration;
+  text-align: center;
+  color: $color-dreamy;
+}
+
+.show .post-manager ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+.show .post-manager ul li {
+  display: inline-block;
+}
+
+.form {
+  max-width: 490px;
+  margin: auto;
+}
+
+.form h5 {
+  font-family: $font-decoration;
+  color: #B4B3B4;
+  letter-spacing: 0.3pt;
+
+}
+
+.pictures-form {
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
 }
