@@ -1,7 +1,40 @@
 // import scss partials here
 body {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
 
+header {
+  // background: linear-gradient(to left, #acb6e540, #74ebd542);
+  background: #acb6e540;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.h1-container {
+  text-align: center;
+  color: #847E93;
+}
+
+.h1-container p {
+  margin-top: -7px;
+}
+
+h1 {
+  font-family: 'Limelight', cursive;
+  margin-bottom: 0;
+  padding-top: 14px;
+}
+
+nav {
+  border-bottom: 1px solid silver;
+  margin-bottom: 15px;
 }
 
 .nav-link {

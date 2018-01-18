@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>DIY Share</title>
+    <title>DIY share</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
     <script
@@ -18,8 +20,14 @@
   </head>
   <body>
     <header>
-      <a href="/">
-        <h1>DIY Share</h1>
+
+
+
+
+
+
+      <a href="/" class="h1-container">
+        <h1>DIY share</h1>
         <p>a place for your projects</p>
       </a>
       <nav>
@@ -44,7 +52,7 @@
       </nav>
     </header>
     <main class="container">
-      <div>
+
         <% for(const type in messages) { %>
           <div class="callout <%= type %>">
             <h5><%= messages[type] %></h5>
@@ -52,7 +60,7 @@
           <% } %>
 
           <%- body %>
-      </div>
+
     </main>
   </body>
 </html>
