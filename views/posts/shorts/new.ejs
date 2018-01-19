@@ -10,11 +10,11 @@
 
   <div class="form-group">
     <label for="description">Description</label>
-    <input class="form-control" type="textarea" name="description" id="description" required>
+    <textarea class="form-control" type="textarea" name="description" id="description" required></textarea>
   </div>
 
   <div class="pictures-form">
-    <h5>Pictures</h5>
+    <h5>Add Pictures</h5>
     <ul class="pictures-container">
     </ul>
     <hr>
@@ -26,15 +26,16 @@
       <label for="caption">Caption</label>
       <input class="form-control" type="text" name="caption" id="caption">
     </div>
-
-    <p class="add-picture-button btn btn-outline-secondary" type="button" name="button">
-      Save Picture
-    </p>
+    <div class="add-picture-button-container">
+      <p class="add-picture-button btn btn-outline-secondary" type="button" name="button">
+      Add
+      </p>
+    </div>
   </div>
 
   <textarea id="allPictures" name="pictures" style="display:none;"></textarea>
 
-  <button class="button btn btn-outline-secondary">Create</button>
+  <button class="button btn btn-outline-secondary">Create Post</button>
 </form>
 
 </div>

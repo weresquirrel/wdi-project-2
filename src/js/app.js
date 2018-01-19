@@ -20,9 +20,10 @@ $(() => {
 
       $('.pictures-container').append(`
         <li id="${pictures.length -1}">
-          <img src="${picture.url}" width="100" height="100">
-          <p>${picture.caption}</p>
-          <p class="btn btn-danger deletePicture" id="${pictures.length -1}">x</p>
+          <div class="pic-wrap" style="background-image: url('${picture.url}')">
+            <p class="btn btn-danger deletePicture right" id="${pictures.length -1}">x</p>
+          </div>
+          <p class="pre-view-caption">${picture.caption}</p>
         </li>
       `);
 

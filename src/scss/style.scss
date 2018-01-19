@@ -218,4 +218,59 @@ div.card-img-top {
 .pictures-form {
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .25rem;
+  padding: 14px 14px 0 14px;
+}
+
+.add-picture-button-container {
+  text-align: center;
+}
+
+.pictures-container {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+.pictures-container li {
+  display: inline-block;
+
+  // background-position: center;
+  // background-size: cover;
+  // border-radius: .25rem;
+}
+
+.pic-wrap {
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+  border-radius: .25rem;
+}
+
+.pre-view-caption {
+  clear: both;
+  display: block;
+}
+
+.pictures-container img {
+  border-radius: .25rem;
+}
+
+.deletePicture {
+  float: right;
+}
+
+.new-short-post button {
+  display: block;
+  margin: 14px auto;
+}
+
+.registration h5 {
+  text-align: center;
+}
+
+.registration button,
+.login button {
+  display: block;
+  margin: auto;
 }
