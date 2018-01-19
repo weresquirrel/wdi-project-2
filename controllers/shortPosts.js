@@ -33,6 +33,7 @@ function shortPostsShow(req, res, next) {
     .populate('createdBy comments.createdBy')
     .exec()
     .then((shortPost) => {
+      console.log(shortPost);
       return res.render('posts/shorts/show', { shortPost });
     })
     .catch(next);

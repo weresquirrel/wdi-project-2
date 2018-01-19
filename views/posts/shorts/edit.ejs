@@ -1,44 +1,53 @@
+<div class="form edit-short-post">
+
 <form class="edit-project" action="/posts/shorts/<%= shortPost.id %>" method="POST">
   <input type="hidden" name="_method" value="PUT">
-  <div>
+  <div class="form-group">
     <label for="title">Project Title</label>
-    <input type="text" name="title" id="title" value="<%= shortPost.title %>" required>
+    <input class="form-control" type="text" name="title" id="title" value="<%= shortPost.title %>" required>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="description">Description</label>
-    <input type="textarea" name="description" id="description" value="<%= shortPost.description %>" required>
+    <textarea class="form-control" type="textarea" name="description" id="description" value="<%= shortPost.description %>" required></textarea>
   </div>
 
   <div class="pictures-form">
-    <h3>Pictures</h3>
+    <h5>Pictures</h5>
     <ul class="pictures-container">
       <% shortPost.pictures.forEach((picture, i) => { %>
+
         <li id="<%= i %>">
-          <img src="<%= picture.url %>" width="100" height="100">
-          <p><%= picture.caption %></p>
-          <p class="btn btn-danger deletePicture" id="<%= i %>">x</p>
+          <div class="pic-wrap" style="background-image: url(<%= picture.url %>)">
+          <p class="btn btn-danger deletePicture right" id="<%= i %>">x</p>
+          </div>
+          <p class="pre-view-caption"><%= picture.caption %></p>
         </li>
+
       <% }); %>
+
     </ul>
     <hr>
-    <div>
+    <div class="form-group">
       <label for="picture">Picture url</label>
-      <input type="text" name="picture" id="picture">
+      <input class="form-control" type="text" name="picture" id="picture">
     </div>
-    <div>
+    <div class="form-group">
       <label for="caption">Caption</label>
-      <input type="text" name="caption" id="caption">
+      <input class="form-control" type="text" name="caption" id="caption">
     </div>
-
-    <p class="add-picture-button btn btn-primary" type="button" name="button">
-      Save Picture
-    </p>
+    <div class="add-picture-button-container">
+      <p class="add-picture-button btn btn-outline-secondary" type="button" name="button">
+      Add Picture
+      </p>
+    </div>
   </div>
 
   <textarea id="allPictures" name="pictures" style="display:none;">
     <%- JSON.stringify(shortPost.pictures) %>
   </textarea>
 
-  <button class="button">Update</button>
+  <button class="button btn btn-outline-secondary">Update</button>
 </form>
+
+</div>

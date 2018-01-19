@@ -133,6 +133,8 @@ div.card-img-top {
 
 .show .caption {
   font-family: $font-decoration;
+  margin-top: 7px;
+  margin-bottom: 21px;
 }
 
 .show-post {
@@ -173,8 +175,11 @@ div.card-img-top {
 }
 
 .show textarea {
-  height: 150px;
   margin-bottom: 14px;
+}
+
+textarea {
+  height: 150px;
 }
 
 .form {
@@ -233,10 +238,6 @@ div.card-img-top {
 
 .pictures-container li {
   display: inline-block;
-
-  // background-position: center;
-  // background-size: cover;
-  // border-radius: .25rem;
 }
 
 .pic-wrap {
@@ -260,12 +261,15 @@ div.card-img-top {
   float: right;
 }
 
-.new-short-post button {
+.new-short-post button,
+.edit-short-post button {
   display: block;
   margin: 14px auto;
 }
 
-.registration h5 {
+.registration h5,
+.edit-short-post h5,
+.new-short-post h5 {
   text-align: center;
 }
 
