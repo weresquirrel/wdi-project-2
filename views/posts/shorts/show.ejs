@@ -18,7 +18,7 @@
     <% if (locals.isLoggedIn && shortPost.belongsTo(user)) { %>
       <div class="post-manager">
 
-        <p>Manage your post</p>
+        <h5>Manage your post</h5>
         <ul>
           <li>
             <a href="/posts/shorts/<%= shortPost.id %>/edit" class="btn btn-outline-secondary">Edit</a>
@@ -33,8 +33,6 @@
       </div>
     <% } %>
 
-    <hr>
-
     <% shortPost.comments.forEach((comment) => { %>
       <p><%= comment.content %></p>
       <small><%= comment.createdBy.username %></small>
@@ -48,13 +46,13 @@
     <% }) %>
 
     <% if(locals.isLoggedIn) { %>
-      <section>
-        <h4>Leave a comment</h4>
+      <div class="form-group send-comment">
+        <h5>Leave a comment</h5>
         <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments">
-          <textarea name="content" id="content" placeholder="Comment" required></textarea>
+          <textarea class="form-control" name="content" id="content" placeholder="Comment" required></textarea>
           <button class="btn btn-outline-secondary">Send</button>
         </form>
-      </section>
+      </div>
     <% } %>
 
   </div>

@@ -8,6 +8,7 @@ body {
 
 header {
   // background: linear-gradient(to left, #acb6e540, #74ebd542);
+  // background: linear-gradient(to left, rgba(172,185,229,0.25), rgba(116,235,213,0.26));
   // background: #acb6e540;
 }
 
@@ -38,11 +39,14 @@ h1 {
   font-family: $font-decoration;
   margin-bottom: 0;
   padding-top: 14px;
+
+  background: -webkit-linear-gradient(#757F9A, #D7DDE8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 nav {
-  // border-bottom: 1px solid silver;
-  border-top: 1px solid silver;
+  border-top: 1px solid rgba(0,0,0,.125);
   margin-bottom: 15px;
 }
 
@@ -66,7 +70,6 @@ nav {
 
 .index li {
   margin-bottom: 15px;
-
 }
 
 .index h5 {
@@ -74,18 +77,35 @@ nav {
   // color: #4f4d55;
   // color: #4492D2;
   // color: #029c95;
-  color: #364745;
+  // color: #364745;
   letter-spacing: 0.3pt;
   text-align: center;
 }
 
-.index h5:hover {
-  color:$color-dreamy;
+
+
+.index a {
+  color: #364745;
+  opacity: 0.85;
+}
+
+.index a:hover {
+  color:black;
 }
 
 .card {
   // border: 2px solid red;
   padding: 2px;
+}
+
+div.card-img-top {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .comments-num {
@@ -118,6 +138,7 @@ nav {
   padding: 20px 30px 20px 30px;
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .25rem;
+  min-width: 100%;
 }
 
 .picture-wrapper {
@@ -130,12 +151,8 @@ nav {
 
 .show .post-manager {
   border-top: 1px solid rgba(0,0,0,.125);
-}
-
-.show .post-manager p{
-  font-family: $font-decoration;
-  text-align: center;
-  color: $color-dreamy;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
 .show .post-manager ul {
@@ -148,29 +165,39 @@ nav {
   display: inline-block;
 }
 
+.show h5 {
+  text-align: center;
+}
+
+.show textarea {
+  height: 150px;
+  margin-bottom: 14px;
+}
+
 .form {
   max-width: 490px;
   margin: auto;
 }
 
-.form h5 {
+.form h5,
+.show h5 {
   font-family: $font-decoration;
   color: #B4B3B4;
   letter-spacing: 0.3pt;
 
 }
 
+.send-comment {
+  border-top: 1px solid rgba(0,0,0,.125);
+  padding-top: 14px;
+}
+
+.send-comment button {
+  display: block;
+  margin: auto;
+}
+
 .pictures-form {
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .25rem;
-}
-
-div.card-img-top {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.85;
-  &:hover {
-    opacity: 1;
-  }
 }
