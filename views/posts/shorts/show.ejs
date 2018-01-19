@@ -33,14 +33,24 @@
       </div>
     <% } %>
 
+
+
     <% shortPost.comments.forEach((comment) => { %>
-      <p><%= comment.content %></p>
-      <small><%= comment.createdBy.username %></small>
+      <div class="comment">
+        <small class="left"><%= comment.createdBy.username %></small>
+        <small class="right">
+          <%= comment.updatedAt.getDate() %>.
+          <%= comment.updatedAt.getMonth() + 1 %>.
+          <%= comment.updatedAt.getFullYear() %>
+        </small>
+        <p class="clear"><%= comment.content %></p>
+      </div>
+
 
       <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
         <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments/<%= comment.id %>">
           <input type="hidden" name="_method" value="DELETE">
-          <button class="btn btn-outline-secondary">Delete comment</button>
+          <button class="btn btn-outline-secondary delete-comment">Delete comment</button>
         </form>
       <% } %>
     <% }) %>
