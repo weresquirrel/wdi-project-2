@@ -41,5 +41,4 @@ router.route('/posts/shorts/:id/comments')
 router.route('/posts/shorts/:id/comments/:commentId')
   .delete(shortPosts.deleteComment);
 
-
 module.exports = router;

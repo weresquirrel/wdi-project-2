@@ -1,41 +1,39 @@
 <div class="form new-short-post">
 
-
-
-<form action="/posts/short" method="POST">
-  <div class="form-group">
-    <label for="title">Project Title</label>
-    <input class="form-control" type="text" name="title" id="title" required>
-  </div>
-
-  <div class="form-group">
-    <label for="description">Description</label>
-    <textarea class="form-control" type="textarea" name="description" id="description" required></textarea>
-  </div>
-
-  <div class="pictures-form">
-    <h5>Add Pictures</h5>
-    <ul class="pictures-container">
-    </ul>
-    <hr>
+  <form action="/posts/short" method="POST">
     <div class="form-group">
-      <label for="picture">Picture url</label>
-      <input class="form-control" type="text" name="picture" id="picture">
+      <label for="title">Project Title</label>
+      <input class="form-control" type="text" name="title" id="title" required>
     </div>
+
     <div class="form-group">
-      <label for="caption">Caption</label>
-      <input class="form-control" type="text" name="caption" id="caption">
+      <label for="description">Description</label>
+      <textarea class="form-control" type="textarea" name="description" id="description" required></textarea>
     </div>
-    <div class="add-picture-button-container">
-      <p class="add-picture-button btn btn-outline-secondary" type="button" name="button">
-      Add
-      </p>
+
+    <div class="pictures-form">
+      <h5>Add Pictures</h5>
+      <ul class="pictures-container">
+      </ul>
+      <hr>
+      <div class="form-group">
+        <label for="picture">Picture url</label>
+        <input class="form-control" type="text" name="picture" id="picture">
+      </div>
+      <div class="form-group">
+        <label for="caption">Caption</label>
+        <input class="form-control" type="text" name="caption" id="caption">
+      </div>
+      <div class="add-picture-button-container">
+        <p class="add-picture-button btn btn-outline-secondary" type="button" name="button">
+          Add
+        </p>
+      </div>
     </div>
-  </div>
 
-  <textarea id="allPictures" name="pictures" style="display:none;"></textarea>
+    <textarea id="allPictures" name="pictures" style="display:none;"></textarea>
 
-  <button class="button btn btn-outline-secondary">Create Post</button>
-</form>
+    <button class="button btn btn-outline-secondary">Create Post</button>
+  </form>
 
 </div>

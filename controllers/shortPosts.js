@@ -33,7 +33,6 @@ function shortPostsShow(req, res, next) {
     .populate('createdBy comments.createdBy')
     .exec()
     .then((shortPost) => {
-      console.log(shortPost);
       return res.render('posts/shorts/show', { shortPost });
     })
     .catch(next);
@@ -44,7 +43,6 @@ function shortPostsDelete(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((shortPost) => {
-
       return shortPost.remove();
     })
     .then(() => res.redirect('/'))
@@ -56,7 +54,6 @@ function shortPostsEdit(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((shortPost) => {
-
       return res.render('posts/shorts/edit', { shortPost });
     })
     .catch(next);
@@ -71,17 +68,13 @@ function shortPostsUpdate(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((shortPost) => {
-
       shortPost = Object.assign(shortPost, req.body);
-
       return shortPost.save();
-
     })
     .then(() => res.redirect(`/posts/shorts/${req.params.id}`))
     .catch(next);
 }
 
-// /posts/shorts/:id
 function createComment(req, res, next) {
   req.body.createdBy = req.user;
 
@@ -108,8 +101,6 @@ function deleteComment(req, res, next) {
     .then(() => res.redirect(`/posts/shorts/${req.params.id}`))
     .catch(next);
 }
-
-
 
 module.exports = {
   new: shortPostsNew,

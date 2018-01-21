@@ -1,71 +1,67 @@
 <div class="container show">
 
-<div class="row">
-  <div class="show-post">
+  <div class="row">
+    <div class="show-post">
 
-    <h3><%= shortPost.title %></h3>
-    <p>created by: <%= shortPost.createdBy.username %></p>
+      <h3><%= shortPost.title %></h3>
+      <p>created by: <%= shortPost.createdBy.username %></p>
 
-    <% shortPost.pictures.forEach((picture) => { %>
-      <div class="picture-wrapper">
-        <img class="img-fluid" src="<%= picture.url %>" alt="<%= picture.caption %>">
-        <p class="caption"><%= picture.caption %></p>
-      </div>
-    <% }); %>
+      <% shortPost.pictures.forEach((picture) => { %>
+        <div class="picture-wrapper">
+          <img class="img-fluid" src="<%= picture.url %>" alt="<%= picture.caption %>">
+          <p class="caption"><%= picture.caption %></p>
+        </div>
+      <% }); %>
 
-    <p><%= shortPost.description %></p>
+      <p><%= shortPost.description %></p>
 
-    <% if (locals.isLoggedIn && shortPost.belongsTo(user)) { %>
-      <div class="post-manager">
-
-        <h5>Manage your post</h5>
-        <ul>
-          <li>
-            <a href="/posts/shorts/<%= shortPost.id %>/edit" class="btn btn-outline-secondary">Edit</a>
-          </li>
-          <li>
-            <form method="POST" action="/posts/shorts/<%= shortPost.id %>">
-              <input type="hidden" name="_method" value="DELETE">
-              <button class="btn btn-outline-secondary">Delete</button>
-            </form>
-          </li>
-        </ul>
-      </div>
-    <% } %>
-
-
-
-    <% shortPost.comments.forEach((comment) => { %>
-      <div class="comment">
-        <small class="left"><%= comment.createdBy.username %></small>
-        <small class="right">
-          <%= comment.updatedAt.getDate() %>.
-          <%= comment.updatedAt.getMonth() + 1 %>.
-          <%= comment.updatedAt.getFullYear() %>
-        </small>
-        <p class="clear"><%= comment.content %></p>
-      </div>
-
-
-      <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
-        <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments/<%= comment.id %>">
-          <input type="hidden" name="_method" value="DELETE">
-          <button class="btn btn-outline-secondary delete-comment">Delete comment</button>
-        </form>
+      <% if (locals.isLoggedIn && shortPost.belongsTo(user)) { %>
+        <div class="post-manager">
+          <h5>Manage your post</h5>
+          <ul>
+            <li>
+              <a href="/posts/shorts/<%= shortPost.id %>/edit" class="btn btn-outline-secondary">Edit</a>
+            </li>
+            <li>
+              <form method="POST" action="/posts/shorts/<%= shortPost.id %>">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="btn btn-outline-secondary">Delete</button>
+              </form>
+            </li>
+          </ul>
+        </div>
       <% } %>
-    <% }) %>
 
-    <% if(locals.isLoggedIn) { %>
-      <div class="form-group send-comment">
-        <h5>Leave a comment</h5>
-        <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments">
-          <textarea class="form-control" name="content" id="content" placeholder="Comment" required></textarea>
-          <button class="btn btn-outline-secondary">Send</button>
-        </form>
-      </div>
-    <% } %>
+      <% shortPost.comments.forEach((comment) => { %>
+        <div class="comment">
+          <small class="left"><%= comment.createdBy.username %></small>
+          <small class="right">
+            <%= comment.updatedAt.getDate() %>.
+            <%= comment.updatedAt.getMonth() + 1 %>.
+            <%= comment.updatedAt.getFullYear() %>
+          </small>
+          <p class="clear"><%= comment.content %></p>
+        </div>
 
+        <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
+          <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments/<%= comment.id %>">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="btn btn-outline-secondary delete-comment">Delete comment</button>
+          </form>
+        <% } %>
+      <% }) %>
+
+      <% if(locals.isLoggedIn) { %>
+        <div class="form-group send-comment">
+          <h5>Leave a comment</h5>
+          <form method="POST" action="/posts/shorts/<%= shortPost.id %>/comments">
+            <textarea class="form-control" name="content" id="content" placeholder="Comment" required></textarea>
+            <button class="btn btn-outline-secondary">Send</button>
+          </form>
+        </div>
+      <% } %>
+
+    </div>
   </div>
-</div>
 
 </div>

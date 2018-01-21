@@ -10,7 +10,7 @@ const session              = require('express-session');
 const flash                = require('express-flash');
 const authentication       = require('./lib/authentication');
 const { port, env, dbURI } = require('./config/environment');
-console.log(`dbURI: ${dbURI}`);
+// console.log(`dbURI: ${dbURI}`);
 
 const app = express();
 

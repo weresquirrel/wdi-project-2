@@ -1,33 +1,23 @@
 // import scss partials here
 @import "variables";
 
-
 body {
   font-family: $font-plain;
 }
 
-header {
-  // background: linear-gradient(to left, #acb6e540, #74ebd542);
-  // background: linear-gradient(to left, rgba(172,185,229,0.25), rgba(116,235,213,0.26));
-  // background: #acb6e540;
-}
-
 a {
   text-decoration: none;
-
-}
-
-a:hover {
-  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .h1-container {
   text-align: center;
   color: $color-dreamy;
-}
-
-.h1-container:hover {
-  color: $color-dreamy;
+  &:hover {
+    color: $color-dreamy;
+  }
 }
 
 .h1-container p {
@@ -45,55 +35,39 @@ h1 {
 }
 
 nav {
-  border-top: 1px dashed rgba(0,0,0,.125);
+  border-top: 1px dashed $color-border;
   margin-bottom: 15px;
 }
 
 .nav-link {
   color: $color-dreamy;
   font-family: $font-plain;
+  &:hover {
+    color:  $color-dark;
+  }
 }
-
-.nav-link:hover {
-  // color: #7870c7;
-  // color: #a64f9d;
-  color:  #364745;
-}
-
-
 
 .index {
   list-style-type: none;
   padding-left: 0;
-}
-
-.index li {
-  margin-bottom: 15px;
-}
-
-.index h5 {
-  font-family: $font-decoration;
-  // color: #4f4d55;
-  // color: #4492D2;
-  // color: #029c95;
-  // color: #364745;
-  letter-spacing: 0.3pt;
-  text-align: center;
-}
-
-
-
-.index a {
-  color: #364745;
-  opacity: 0.85;
-}
-
-.index a:hover {
-  color:black;
+  & li {
+    margin-bottom: 15px;
+  }
+  & h5 {
+    font-family: $font-decoration;
+    letter-spacing: 0.3pt;
+    text-align: center;
+  }
+  & a {
+    color: $color-dark;
+    opacity: 0.85;
+    &:hover {
+      color:black;
+    }
+  }
 }
 
 .card {
-  // border: 2px solid red;
   padding: 2px;
 }
 
@@ -125,53 +99,46 @@ div.card-img-top {
 
 .show {
   max-width: 790px;
-}
-
-.show h3 {
-  font-family: $font-decoration;
-}
-
-.show .caption {
-  font-family: $font-decoration;
-  margin-top: 7px;
-  margin-bottom: 21px;
+  & h3 {
+    font-family: $font-decoration;
+  }
+  .caption {
+    font-family: $font-decoration;
+    margin-top: 7px;
+    margin-bottom: 21px;
+  }
+  & h5 {
+    text-align: center;
+  }
 }
 
 .show-post {
   padding: 20px 30px 20px 30px;
-  border: 1px solid rgba(0,0,0,.125);
+  border: 1px solid $color-border;
   border-radius: .25rem;
   min-width: 100%;
 }
 
 .picture-wrapper {
   text-align: center;
-}
-
-.picture-wrapper img {
-  border-radius: .25rem;
+  & img {
+    border-radius: .25rem;
+  }
 }
 
 .show .post-manager {
-  border-top: 1px solid rgba(0,0,0,.125);
-  border-bottom: 1px solid rgba(0,0,0,.125);
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
   padding-top: 14px;
   padding-bottom: 14px;
-}
-
-
-.show .post-manager ul {
-  list-style-type: none;
-  padding-left: 0;
-  text-align: center;
-}
-
-.show .post-manager ul li {
-  display: inline-block;
-}
-
-.show h5 {
-  text-align: center;
+  & ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+    & li {
+      display: inline-block;
+    }
+  }
 }
 
 .show textarea {
@@ -192,18 +159,16 @@ textarea {
   font-family: $font-decoration;
   color: #B4B3B4;
   letter-spacing: 0.3pt;
-
 }
 
 .comment {
   margin-top: 14px;
   padding: 14px 14px 0 14px;
-}
-
-.comment small {
-  font-family: $font-decoration;
-  letter-spacing: 0.3pt;
-  color:$color-dreamy;
+  & small {
+    font-family: $font-decoration;
+    letter-spacing: 0.3pt;
+    color:$color-dreamy;
+  }
 }
 
 .delete-comment {
@@ -213,15 +178,14 @@ textarea {
 
 .send-comment {
   margin-top: 14px;
-}
-
-.send-comment button {
-  display: block;
-  margin: auto;
+  & button {
+    display: block;
+    margin: auto;
+  }
 }
 
 .pictures-form {
-  border: 1px solid rgba(0,0,0,.125);
+  border: 1px solid $color-border;
   border-radius: .25rem;
   padding: 14px 14px 0 14px;
 }
@@ -234,10 +198,9 @@ textarea {
   list-style-type: none;
   padding-left: 0;
   text-align: center;
-}
-
-.pictures-container li {
-  display: inline-block;
+  & li {
+    display: inline-block;
+  }
 }
 
 .pic-wrap {

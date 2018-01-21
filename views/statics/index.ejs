@@ -1,26 +1,26 @@
 <div class="container">
 
-<ul class="row index">
-  <% shortPosts.forEach((shortPost) => { %>
-    <li class="col-lg-4 col-md-6">
-      <a href="/posts/shorts/<%= shortPost.id %>">
-        <div class="card" style="width: 18rem;">
-          <div class="card-img-top" alt="<%=shortPost.pictures[0].caption %>" style="background-image: url('<%= shortPost.pictures[0].url %>')"></div>
-          <div class="card-body">
-            <h5 class="card-title"><%= shortPost.title %></h5>
-            <div class="left">
-              <% if (shortPost.createdBy) { %>
-                <small>by: <%= shortPost.createdBy.username %></small>
-              <% } %>
-            </div>
-            <div class="right">
-              <small class="comments-num"><%= shortPost.comments.length %> comments</small>
+  <ul class="row index">
+    <% shortPosts.forEach((shortPost) => { %>
+      <li class="col-lg-4 col-md-6">
+        <a href="/posts/shorts/<%= shortPost.id %>">
+          <div class="card" style="width: 18rem;">
+            <div class="card-img-top" alt="<%=shortPost.pictures[0].caption %>" style="background-image: url('<%= shortPost.pictures[0].url %>')"></div>
+            <div class="card-body">
+              <h5 class="card-title"><%= shortPost.title %></h5>
+              <div class="left">
+                <% if (shortPost.createdBy) { %>
+                  <small>by: <%= shortPost.createdBy.username %></small>
+                <% } %>
+              </div>
+              <div class="right">
+                <small class="comments-num"><%= shortPost.comments.length %> comments</small>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
-    </li>
-  <% }); %>
-</ul>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
 
 </div>

@@ -10,8 +10,6 @@ const User = require('../models/user');
 Post.collection.drop();
 User.collection.drop();
 
-
-
 User
   .create([{
     username: 'Decor_Guru',

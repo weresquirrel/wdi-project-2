@@ -1,5 +1,3 @@
-// client side js here
-
 $(() => {
   if( $('.pictures-form').length !== 0 ) {
     let pictures = null;

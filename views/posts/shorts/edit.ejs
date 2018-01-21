@@ -1,53 +1,55 @@
 <div class="form edit-short-post">
 
-<form class="edit-project" action="/posts/shorts/<%= shortPost.id %>" method="POST">
-  <input type="hidden" name="_method" value="PUT">
-  <div class="form-group">
-    <label for="title">Project Title</label>
-    <input class="form-control" type="text" name="title" id="title" value="<%= shortPost.title %>" required>
-  </div>
-
-  <div class="form-group">
-    <label for="description">Description</label>
-    <textarea class="form-control" type="textarea" name="description" id="description" value="<%= shortPost.description %>" required></textarea>
-  </div>
-
-  <div class="pictures-form">
-    <h5>Pictures</h5>
-    <ul class="pictures-container">
-      <% shortPost.pictures.forEach((picture, i) => { %>
-
-        <li id="<%= i %>">
-          <div class="pic-wrap" style="background-image: url(<%= picture.url %>)">
-          <p class="btn btn-danger deletePicture right" id="<%= i %>">x</p>
-          </div>
-          <p class="pre-view-caption"><%= picture.caption %></p>
-        </li>
-
-      <% }); %>
-
-    </ul>
-    <hr>
+  <form class="edit-project" action="/posts/shorts/<%= shortPost.id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
     <div class="form-group">
-      <label for="picture">Picture url</label>
-      <input class="form-control" type="text" name="picture" id="picture">
+      <label for="title">Project Title</label>
+      <input class="form-control" type="text" name="title" id="title" value="<%= shortPost.title %>" required>
     </div>
+
     <div class="form-group">
-      <label for="caption">Caption</label>
-      <input class="form-control" type="text" name="caption" id="caption">
+      <label for="description">Description</label>
+      <textarea class="form-control" type="textarea" name="description" id="description" value="<%= shortPost.description %>" required></textarea>
     </div>
-    <div class="add-picture-button-container">
-      <p class="add-picture-button btn btn-outline-secondary" type="button" name="button">
-      Add Picture
-      </p>
+
+    <div class="pictures-form">
+      <h5>Pictures</h5>
+      <ul class="pictures-container">
+        <% shortPost.pictures.forEach((picture, i) => { %>
+
+          <li id="<%= i %>">
+            <div class="pic-wrap" style="background-image: url(<%= picture.url %>)">
+              <p class="btn btn-danger deletePicture right" id="<%= i %>">x</p>
+            </div>
+            <p class="pre-view-caption"><%= picture.caption %></p>
+            </li>
+
+        <% }); %>
+      </ul>
+
+      <hr>
+      <div class="form-group">
+        <label for="picture">Picture url</label>
+        <input class="form-control" type="text" name="picture" id="picture">
+      </div>
+      <div class="form-group">
+        <label for="caption">Caption</label>
+        <input class="form-control" type="text" name="caption" id="caption">
+      </div>
+
+      <div class="add-picture-button-container">
+        <p class="add-picture-button btn btn-outline-secondary" type="button" name="button">
+          Add Picture
+        </p>
+      </div>
+
     </div>
-  </div>
 
-  <textarea id="allPictures" name="pictures" style="display:none;">
-    <%- JSON.stringify(shortPost.pictures) %>
-  </textarea>
+    <textarea id="allPictures" name="pictures" style="display:none;">
+      <%- JSON.stringify(shortPost.pictures) %>
+    </textarea>
 
-  <button class="button btn btn-outline-secondary">Update</button>
-</form>
+    <button class="button btn btn-outline-secondary">Update</button>
+  </form>
 
 </div>
