@@ -194,6 +194,11 @@ textarea {
   text-align: center;
 }
 
+// to prevent overpowering the basic btn-outline-secondary style
+html [type=button] {
+    -webkit-appearance: none;
+}
+
 .pictures-container {
   list-style-type: none;
   padding-left: 0;
