@@ -3,6 +3,7 @@
 
 body {
   font-family: $font-plain;
+  padding-bottom: 16px;
 }
 
 a {
@@ -127,8 +128,8 @@ div.card-img-top {
 }
 
 .show .post-manager {
-  border-top: 1px solid $color-border;
-  border-bottom: 1px solid $color-border;
+  border-top: 1px dashed $color-border;
+  border-bottom: 1px dashed $color-border;
   padding-top: 14px;
   padding-bottom: 14px;
   & ul {
@@ -168,6 +169,7 @@ textarea {
     font-family: $font-decoration;
     letter-spacing: 0.3pt;
     color:$color-dreamy;
+    font-size: 90%;
   }
 }
 

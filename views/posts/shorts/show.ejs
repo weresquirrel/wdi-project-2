@@ -36,9 +36,9 @@
         <div class="comment">
           <small class="left"><%= comment.createdBy.username %></small>
           <small class="right">
-            <%= comment.updatedAt.getDate() %>.
-            <%= comment.updatedAt.getMonth() + 1 %>.
-            <%= comment.updatedAt.getFullYear() %>
+            <%= comment.createdAt.getDate() %>.
+            <%= comment.createdAt.getMonth() + 1 %>.
+            <%= comment.createdAt.getFullYear() %>
           </small>
           <p class="clear"><%= comment.content %></p>
         </div>
@@ -49,6 +49,7 @@
             <button class="btn btn-outline-secondary delete-comment">Delete comment</button>
           </form>
         <% } %>
+        <hr/>
       <% }) %>
 
       <% if(locals.isLoggedIn) { %>
