@@ -1,4 +1,4 @@
-#DIY share
+# DIY share
 [![Heroku App Status](https://heroku-shields.herokuapp.com/shrouded-hamlet-84975)](https://shrouded-hamlet-84975.herokuapp.com)
 
 A social platform for DIY projects. People can share their work, view the other's and discuss them in comments.
@@ -7,14 +7,14 @@ It was my second project at General Assembly's WDI course, and the first one tha
  
 ** Screen shot **
 
-##Prerequisites
+## Prerequisites
 
 - Node.js
 - npm
 - MongoDB
 - gulp
 
-##Build
+## Build
 
 Clone this repository:
 
@@ -37,7 +37,7 @@ or run as standalone application (by default on port 3000):
 
 	npm run start
 	
-##Technologies used
+## Technologies used
 
 - Node.js
 - Express.js
@@ -52,7 +52,7 @@ or run as standalone application (by default on port 3000):
 - HTML
 - Heroku
 
-##Challenges Faced
+## Challenges Faced
 
 This was the first project I written using server-side code, so I had to learn the distinction of which code is running where, how do they communicate with each other (so I learned about RESTful applications as well). I also learned about how to implement a basic authentication system.
 
@@ -63,7 +63,7 @@ Another new experience was using css frameworks and scss too, I really enjoyed t
 While not the most important feature, the achievement I felt the most proud about was the multiple image preview before submitting a post.
 
 
-##Future plans / roadmap
+## Future plans / roadmap
 
 - Allow users to rate (or like) others' posts
 - Have different kinds of posts (e.g. tutorials, with steps)
@@ -71,6 +71,6 @@ While not the most important feature, the achievement I felt the most proud abou
 - Further improve styling for smaller screens / mobile devices 
 
 
-##Acknowledgement
+## Acknowledgement
 
 The sample data is using images from [Unsplash](https://unsplash.com/)
