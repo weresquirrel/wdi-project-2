@@ -4,8 +4,8 @@
 A social platform for DIY projects. People can share their work, view the other's and discuss them in comments.
 
 It was my second project at General Assembly's WDI course, and the first one that uses server-side coding.
- 
-** Screen shot **
+
+![screenshot](src/assets/screenshot.png)
 
 ## Prerequisites
 
@@ -18,25 +18,25 @@ It was my second project at General Assembly's WDI course, and the first one tha
 
 Clone this repository:
 
-    git clone https://github.com/weresquirrel/wdi-project-2 <project-dir> 
+    git clone https://github.com/weresquirrel/wdi-project-2 <project-dir>
     cd <project-dir>
 
 install dependencies:
 
     npm install
-    
+
 create mongo database schema and populate with sample data:
 
 	npm run seed
 
 run the application in development mode (restarts server when files are changed):
-	
+
 	gulp
 
 or run as standalone application (by default on port 3000):
 
 	npm run start
-	
+
 ## Technologies used
 
 - Node.js
@@ -58,7 +58,7 @@ This was the first project I written using server-side code, so I had to learn t
 
 This was my first use of databases too, so my first exposure to data modeling.
 
-Another new experience was using css frameworks and scss too, I really enjoyed them (compared to having to hand-craft everything). 
+Another new experience was using css frameworks and scss too, I really enjoyed them (compared to having to hand-craft everything).
 
 While not the most important feature, the achievement I felt the most proud about was the multiple image preview before submitting a post.
 
@@ -68,7 +68,7 @@ While not the most important feature, the achievement I felt the most proud abou
 - Allow users to rate (or like) others' posts
 - Have different kinds of posts (e.g. tutorials, with steps)
 - Improve the error handling
-- Further improve styling for smaller screens / mobile devices 
+- Further improve styling for smaller screens / mobile devices
 
 
 ## Acknowledgement
